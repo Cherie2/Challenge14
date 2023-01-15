@@ -1,0 +1,11 @@
+<h1>dashboard</h1>
+{{! create post button }}
+{{#each posts}}
+<h4>{{title}}</h2> 
+<p>{{date_created}}</p>
+{{/each}}
+
+<a href="/dashboard/createpost"><button
+    type="button"
+    class="btn btn-primary"
+  >create post</button></a>
