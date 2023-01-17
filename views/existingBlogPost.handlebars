@@ -1,12 +1,12 @@
 <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
-  <div class="card text-center"value="">
+  <div class="card text-center">
     {{#with singlePost}}
      <div class="card-header">
-      <h1 class="text-center text-primary">{{title}}</h1>
+      <h2 class="text-center text-primary">{{title}}</h2>
     </div>
     <div class="card-body">
-      <p class="card-text ">
-        {{post_content}}</p>
+      <h3 class="card-text ">
+        {{post_content}}</h3>
     </div>
     <div class="card-footer text-muted">
       <p class="text-muted">Posted by: <span class="fs-5 text-primary">{{user.username}}</span> on <span>{{format_date created_at}}</span></p>
@@ -35,11 +35,11 @@
   {{#with singlePost}}
     <div class="card-body">
       <p class="card-text">
-        {{comments.comment_text}}
+        {{comment.comment_text}}
       </p>
       <h5 class="text-center text-muted">Posted by: {{user.username}} on <span>{{format_date commments.createdAt}}</span></h5>
     </div>
-      {{/with}}
+  {{/with}}
 </div>
 
 <script src="/js/createComment.js"></script>
