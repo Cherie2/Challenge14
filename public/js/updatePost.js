@@ -4,7 +4,7 @@ async function updatePost(e) {
   const title = document.getElementById("post-title").value;
   const post_content = document.getElementById("post_content").value;
 
-  const res = await fetch("/api/post", {
+  const res = await fetch("/api/post/:id", {
     method: "PUT",
     body: JSON.stringify({
       title,
@@ -23,10 +23,7 @@ async function updatePost(e) {
 async function deletePost(e) {
   e.preventDefault();
 
-  const title = document.getElementById("post-title").value;
-  const post_content = document.getElementById("post_content").value;
-
-  const res = await fetch("/api/post", {
+  const res = await fetch("/api/post/:id", {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   });

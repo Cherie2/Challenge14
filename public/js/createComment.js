@@ -2,14 +2,14 @@
 async function createComment(e){
     e.preventDefault();
     
-    const title = document.getElementById('comment-title').value
-    const post_content = document.getElementById('comment_content').value
-
+    const comment_text = document.getElementById('comment_text').value
+    const post_id = document.getElementById('post_id').value
+    
     const res = await fetch('/api/comment', {
         method: 'POST', 
         body: JSON.stringify({
-            title, 
-            post_content
+            post_id, 
+            comment_text,
         }),
         headers: { 'Content-Type': 'application/json'}
     })

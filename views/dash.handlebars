@@ -1,11 +1,14 @@
 <h1>dashboard</h1>
-{{! create post button }}
-{{#each posts}}
-<h4>{{title}}</h2> 
-<p>{{date_created}}</p>
+
+{{#each userBlog}}
+<a href="/dashboard/update"><h4>{{title}}</h4></a> 
+
 {{/each}}
 
 <a href="/dashboard/createpost"><button
     type="button"
-    class="btn btn-primary"
-  >create post</button></a>
+    class="btn btn-primary btn-lg"
+  >Create Post</button></a>
+
+
+  <script src="/js/logout.js"></script>

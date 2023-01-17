@@ -32,20 +32,30 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/dashboard", (req, res)=>{
-  res.render("dash");
+router.get("/post/:id", async (req, res) => {
+  try {
+    const postData = await Post.findOne({
+      where: {
+        id:req.params.id,
+      },
+      attributes: [
+        'id',
+        'title',
+        'created_at',
+        'post_content'
+      ],
+      include: [User],
+    });
+    const singlePost = postData.get({ plain: true });
+    console.log(singlePost);
+     res.render("existingBlogPost", {
+      singlePost,
+      logged_in: req.session.logged_in,
+  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get("/dashboard/createpost", (req, res) => {
-  res.render("createPost", {
-    logged_in: req.session.logged_in,
-  });
-});
-
-router.get("/dashboard/updatepost", (req, res) => {
-  res.render("update", {
-    logged_in: req.session.logged_in,
-  });
-});
 
 module.exports = router;

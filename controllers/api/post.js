@@ -9,7 +9,7 @@ router.post("/", (req, res) => {
     // create post with user input; user id from session data
     Post.create({
       title:req.body.title,
-      post_content:req.body.content,
+      post_content:req.body.post_content,
       user_id:req.session.user_id
     })
       .then(newPost => {

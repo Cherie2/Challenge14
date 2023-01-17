@@ -1,18 +1,42 @@
-<div class="w-50">
-<form id="create-comment">
-  <h1>Leave a Comment</h1>
-  <div class="mb-3">
-    <label for="title" class="form-label">Post Title</label>
-    <input type="text" id="post-title" class="form-control"/>
+<div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+  <div class="card text-center"value="">
+    {{#with singlePost}}
+     <div class="card-header">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        {{post_content}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      <h5>Posted by: {{user.username}}</h5>
+      <h6>{{created_at}}</h6>
+      {{/with}}
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="post_content" class="form-label">Post Content</label>
-    <input type="text" id="post_content" class="form-control" />
-  </div>
-  <div class="mb-3">
-    <button type="submit" class="btn btn-primary">Create New Post</button>
-  </div>
-</form>
-
 </div>
-<script src="/js/createPost.js"></script>
+{{!-- {{#if logged_in}}
+  <div class="w-50">
+    <form id="create-comment">
+      <h1>Leave a Comment</h1>
+      <div class="mb-3">
+        <input type="hidden" id="post_id" value={{id}} />
+        <label for="comment_text" class="form-label">Comment</label>
+        <input type="text" id="comment_text" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Comment</button>
+      </div>
+    </form>
+  </div>
+{{/if}} --}}
+
+<div>
+  <h2>Comments</h2>
+  {{!-- {{#each}}
+
+      {{/each}} --}}
+</div>
+
+{{!-- <script src="/js/existingBlogPost.js"></script> --}}
+{{!-- <script src="/js/createComment.js"></script> --}}
