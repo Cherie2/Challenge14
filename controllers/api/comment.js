@@ -19,21 +19,21 @@ router.post("/", (req, res) => {
       });
 });
 
-// //Update your comment
-// router.put("/:id", (req, res) => {
+//Update your comment
+router.put("/:id", (req, res) => {
    
-//     Comment.update(req.body, {
-//       where: {
-//         id: req.params.id
-//       }
-//     }).then(updatedComment => {
-//       res.json(updatedComment);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json({ msg: "An Error Occurred!", err });
-//     });
-// });
+    Comment.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    }).then(updatedComment => {
+      res.json(updatedComment);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "An Error Occurred!", err });
+    });
+});
 
 // //Delete your comment
 // router.delete("/:id", (req, res) => {

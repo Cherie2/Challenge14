@@ -2,41 +2,44 @@
   <div class="card text-center"value="">
     {{#with singlePost}}
      <div class="card-header">
-      <h1>{{title}}</h1>
+      <h1 class="text-center text-primary">{{title}}</h1>
     </div>
     <div class="card-body">
-      <p class="card-text">
+      <p class="card-text ">
         {{post_content}}</p>
     </div>
     <div class="card-footer text-muted">
-      <h5>Posted by: {{user.username}}</h5>
-      <h6>{{created_at}}</h6>
+      <p class="text-muted">Posted by: <span class="fs-5 text-primary">{{user.username}}</span> on <span>{{format_date created_at}}</span></p>
       {{/with}}
     </div>
   </div>
 </div>
-{{!-- {{#if logged_in}}
-  <div class="w-50">
+{{#if logged_in}}
+  <div class="shadow p-3 mb-5 bg-body-tertiary rounded text-center">
     <form id="create-comment">
-      <h1>Leave a Comment</h1>
+      <h3 class="text-center text-primary">Leave a Comment</h3>
       <div class="mb-3">
+        {{#with singlePost}}
         <input type="hidden" id="post_id" value={{id}} />
-        <label for="comment_text" class="form-label">Comment</label>
         <input type="text" id="comment_text" class="form-control" />
+        {{/with}}
       </div>
-      <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Comment</button>
+      <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-primary">Add Comment</button>
       </div>
     </form>
   </div>
-{{/if}} --}}
-
-<div>
-  <h2>Comments</h2>
-  {{!-- {{#each}}
-
-      {{/each}} --}}
+{{/if}}
+  <div class="shadow p-3 mb-5 bg-body-tertiary rounded text-center"></div>
+  <h2 class="text-center text-primary">Comments</h2>
+  {{#with singlePost}}
+    <div class="card-body">
+      <p class="card-text">
+        {{comments.comment_text}}
+      </p>
+      <h5 class="text-center text-muted">Posted by: {{user.username}} on <span>{{format_date commments.createdAt}}</span></h5>
+    </div>
+      {{/with}}
 </div>
 
-{{!-- <script src="/js/existingBlogPost.js"></script> --}}
-{{!-- <script src="/js/createComment.js"></script> --}}
+<script src="/js/createComment.js"></script>

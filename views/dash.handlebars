@@ -1,14 +1,13 @@
-<h1>dashboard</h1>
-
-{{#each userBlog}}
-<a href="/dashboard/update"><h4>{{title}}</h4></a> 
-
-{{/each}}
-
 <a href="/dashboard/createpost"><button
     type="button"
     class="btn btn-primary btn-lg"
   >Create Post</button></a>
-
-
-  <script src="/js/logout.js"></script>
+<h1 class="text-primary text-center">Your Feed</h1>
+{{#each userBlog}}
+<div class="card text-center shadow p-3 mb-5 bg-body-tertiary rounded">
+  <div class="card-header">
+     <a href='dashboard/post/{{id}}'><h3>{{title}}</h3></a>
+  </div>
+   <p>{{format_date createdAt}}</p>
+</div>
+{{/each}}

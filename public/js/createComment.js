@@ -15,7 +15,7 @@ async function createComment(e){
     })
 
     if(res.ok){
-        document.location.replace('/dashboard')
+        document.location.replace('/existingBlogPost')
     }else{
         alert('Unable to leave a Comment!')
     }

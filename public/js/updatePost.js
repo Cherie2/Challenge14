@@ -1,10 +1,11 @@
 async function updatePost(e) {
   e.preventDefault();
 
+  const id = document.getElementById("post_id").value;
   const title = document.getElementById("post-title").value;
   const post_content = document.getElementById("post_content").value;
 
-  const res = await fetch("/api/post/:id", {
+  const res = await fetch(`/api/post/${id}`, {
     method: "PUT",
     body: JSON.stringify({
       title,
@@ -12,7 +13,7 @@ async function updatePost(e) {
     }),
     headers: { "Content-Type": "application/json" },
   });
-
+  console.log(id);
   if (res.ok) {
     document.location.replace("/dashboard");
   } else {
@@ -23,7 +24,9 @@ async function updatePost(e) {
 async function deletePost(e) {
   e.preventDefault();
 
-  const res = await fetch("/api/post/:id", {
+  const id = document.getElementById("post_id").value;
+
+  const res = await fetch(`/api/post/${id}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   });
@@ -35,5 +38,5 @@ async function deletePost(e) {
   }
 }
 
-document.getElementById("update-post").addEventListener("Submit", updatePost);
-document.getElementById("delete-post").addEventListener("click", deletePost);
+document.getElementById("update-post").addEventListener("submit", updatePost);
+document.getElementById("delete-post-btn").addEventListener("click", deletePost);

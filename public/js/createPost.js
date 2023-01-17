@@ -3,7 +3,6 @@ async function createPost(e) {
 
   const title = document.getElementById("post-title").value;
   const post_content = document.getElementById("post_content").value;
-  console.log(post_content);
 
   const res = await fetch("/api/post", {
     method: "POST",

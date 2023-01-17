@@ -4,7 +4,7 @@ const { User, Post, Comment } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [User],
+      include: [User, Comment],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
     res.render("home", {
@@ -44,7 +44,7 @@ router.get("/post/:id", async (req, res) => {
         'created_at',
         'post_content'
       ],
-      include: [User],
+      include: [Comment, User],
     });
     const singlePost = postData.get({ plain: true });
     console.log(singlePost);
