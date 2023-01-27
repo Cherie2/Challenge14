@@ -1,10 +1,10 @@
 .card-header {
     display:flex;
-    width: 80%;
     justify-content: center;
 }
 
 .fs-1{
-    font-size:4.5rem!important;
+    font-size:4.5rem;
+    text-align: center;
     text-shadow: black 2px 2px;
 }

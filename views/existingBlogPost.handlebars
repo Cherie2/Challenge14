@@ -30,16 +30,14 @@
     </form>
   </div>
 {{/if}}
-  <div class="shadow p-3 mb-5 bg-body-tertiary rounded text-center"></div>
-  <h2 class="text-center text-primary">Comments</h2>
-  {{#with singlePost}}
-    <div class="card-body">
-      <p class="card-text">
-        {{comment.comment_text}}
-      </p>
-      <h5 class="text-center text-muted">Posted by: {{user.username}} on <span>{{format_date commments.createdAt}}</span></h5>
-    </div>
-  {{/with}}
+<div class="card">
+  <h2 class="card-header text-center text-primary">Comments</h2>
+    <div class="mb-3 card-body">
+      {{#each singlePost.comments}}
+      <h4 class="text-center">{{comment_text}}</h4>
+      <h5 class="text-center text-muted">Posted by: {{@root.user.username}} on <span>{{format_date createdAt}}</span></h5>
+      {{/each}}
+     </div>
 </div>
 
 <script src="/js/createComment.js"></script>

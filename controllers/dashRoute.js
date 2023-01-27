@@ -8,7 +8,7 @@ router.get("/", withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
-      include: [Comment],
+      include: [Comment, User],
     });
     const userBlog = userPosts.map((post) => post.get({ plain: true }));
     console.log(userBlog);
@@ -34,7 +34,7 @@ router.get("/post/:id", async (req, res) => {
       where: {
         id: req.params.id,
       },
-      include: [User],
+      include: [User, Comment],
     });
 
     const post = data.get({ plain: true });
