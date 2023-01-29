@@ -1,31 +1,65 @@
-<div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+{{#if post}}
+<div class="cards">
+<div class="form shadow p-3 bg-light mb-5 w-75 rounded">
   <form id="update-post">
-    <h1 class="text-primary text-center">Update Post</h1>
-    <div class="mb-3 text-center">
-      <h4 for="title" class="form-label text-primary">Post Title</h4>
+    <h1 class="fs-2 text-center">Update Post</h1>
+    <div class="logCard">
+    <div class="mb-3 text-center w-75">
+      <h4 for="title" class="form-label">Post Title</h4>
       {{#with post}}
        <input type="hidden" id="post_id" value={{id}}/>
       <input
         type="text"
         id="post-title"
         value='{{title}}'
-        class="form-input form-control"
+        class="form-input form-control text-center"
       />
     </div>
-    <div class="mb-3 text-center">
-      <h4 for="post_content" class="form-label text-primary">Post Content</h4>
+    <div class="mb-3 text-center w-75">
+      <h4 for="post_content" class="form-label">Post Content</h4>
       <input
         type="text"
         id="post_content"
         value="{{post_content}}"
+        class="form-input form-control text-center"
+      />
+      {{/with}}
+    </div>
+    </div>
+    <div class="mb-3 text-center">
+      <button type="submit" class="btn postBtn btn-lg">Update Post</button>
+      <button type="click" id="delete-post-btn" class="btn postBtn btn-lg">Delete Post</button>
+    </div>
+  </form>
+</div>
+</div>
+<script src="/js/updatePost.js"></script>
+{{/if}}
+
+{{#if comment}}
+<div class="cards">
+<div class="form shadow p-3 bg-light mb-5 w-75 rounded">
+  <form id="update-comment">
+    <h1 class="fs-2 text-center">Update Comment</h1>
+    <div class="mb-3 text-center">
+      {{#with comment}}
+       <input type="hidden" id="comment_id" value={{id}}/>
+    <div class="mb-3 text-center">
+      <h4 for="comment_text" class="form-label">Comment Content</h4>
+      <input
+        type="text"
+        id="comment_text"
+        value="{{comment_text}}"
         class="form-input form-control"
       />
       {{/with}}
     </div>
-    <div class="mb-3, text-center">
-      <button type="submit" class="btn btn-primary">Update Post</button>
-      <button type="click" id="delete-post-btn" class="btn btn-primary">Delete Post</button>
+    <div class="mb-3 text-center">
+      <button type="submit" class="btn postBtn">Update Comment</button>
+      <button type="click" id="delete-comment-btn" class="btn postBtn">Delete Comment</button>
     </div>
   </form>
 </div>
-<script src="/js/updatePost.js"></script>
+</div>
+<script src="/js/updateComment.js"></script>
+{{/if}}

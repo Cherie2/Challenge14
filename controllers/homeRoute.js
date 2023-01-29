@@ -32,6 +32,26 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+router.get("/comment/:id", async (req, res) => {
+  try {
+    const data = await Comment.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [User, Post],
+    });
+
+    const comment = data.get({ plain: true });
+    console.log(comment);
+    res.render("update", {
+      comment,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findOne({
@@ -56,6 +76,5 @@ router.get("/post/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;

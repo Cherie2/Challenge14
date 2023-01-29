@@ -1,13 +1,18 @@
+
+<h1 class="fs-2 text-center">Your Feed</h1>
+<div class="d-grid gap-2 col-6 mx-auto text-center">
 <a href="/dashboard/createpost"><button
     type="button"
-    class="btn btn-primary btn-lg"
+    class="postBtn btn btn-light btn-lg"
   >Create Post</button></a>
-<h1 class="text-primary text-center">Your Feed</h1>
-{{#each userBlog}}
-<div class="card text-center shadow p-3 mb-5 bg-body-tertiary rounded">
-  <div class="card-header">
-     <a href='dashboard/post/{{id}}'><h3>{{title}}</h3></a>
   </div>
-   <p>{{format_date createdAt}}</p>
+{{#each userBlog}}
+<div class="cards">
+<div class="card text-center shadow w-75 p-3 rounded">
+  <div class="card-header">
+     <a href='dashboard/post/{{id}}'><h2>{{title}}</h2></a>
+  </div>
+   <p class="text-muted">{{format_date createdAt}}</p>
+</div>
 </div>
 {{/each}}

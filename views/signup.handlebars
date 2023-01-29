@@ -1,19 +1,28 @@
-<div class="shadow p-3 mb-5 bg-body-tertiary rounded">
-<form id="signup-form">
-  <h1 class="text-center text-primary">SIGN UP</h1>
-  <div class="mb-3 text-center">
-    <h4 for="username" class="form-label text-primary">Username</h4>
-    <input type="text" id="username" class="form-control"/>
-  </div>
-  <div class="mb-3 text-center">
-    <h4 for="password" class="form-label text-primary">Password</h4>
-    <input type="password" id="password" class="form-control" />
-  </div>
-  <div class="mb-3, text-center">
-    <button type="submit" class="btn btn-primary btn-lg">SIGN UP</button>
-  </div>
-</form>
+<div class="cards">
+  <div class="shadow p-3 mb-5 bg-light w-75 rounded">
+    <form id="signup-form">
+      <h1 class="fs-2 text-primary text-center">Sign Up</h1>
+      <div class="logCard">
+        <div class="mb-3 text-center w-75">
+          <h4 for="username" class="form-label text-black">Username</h4>
+          <input type="text" id="username" class="form-control text-center" />
+        </div>
+        <div class="mb-3 text-center w-75">
+          <h4 for="password" class="form-label text-black">Password</h4>
+          <input
+            type="password"
+            id="password"
+            class="form-control text-center"
+          />
+        </div>
+      </div>
+      <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-primary btn-lg">SIGN UP</button>
+      </div>
+    </form>
 
-<h3 class="text-center">Click here to <a href="/login">Login!</a></h3>
+    <h3 class="text-center text-secondary">Click here to
+      <a href="/login">Login!</a></h3>
+  </div>
 </div>
 <script src="/js/signup.js"></script>

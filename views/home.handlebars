@@ -1,9 +1,12 @@
-<h1 class="text-primary text-center">The Feed</h1>
+
+   <h1 class=" fs-2 text-center">The Feed</h1>
 {{#each posts}}
-<div class="card text-center shadow p-3 mb-5 bg-body-tertiary rounded">
+<div class="cards">
+<div class="card text-center shadow w-75 p-3 rounded">
   <div class="card-header">
      <h2><a href='/post/{{id}}'>{{title}}</a></h2>
   </div>
-   <p>{{format_date createdAt}}</p>
+   <p class="text-muted">{{format_date createdAt}}</p>
+</div>
 </div>
 {{/each}}

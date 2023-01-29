@@ -1,10 +1,81 @@
+
+header{
+    margin-bottom:calc(2.375rem + 1.5vw);
+    background-color:steelblue;
+}
 .card-header {
     display:flex;
     justify-content: center;
 }
 
+.btn, h4, h2, h3 {
+    text-shadow: black .5px .5px;
+    font-weight: 900;
+    color:steelblue;
+}
+
+.nav-link {
+    color:steelblue;
+}
+
+.postBtn {
+    background-color:steelblue;
+    color:white;
+}
 .fs-1{
-    font-size:4.5rem;
+    font-size:calc(3.375rem + 1.5vw)!important;
     text-align: center;
     text-shadow: black 2px 2px;
+    font-weight: 900;
+    color:white;
+}
+
+.fs-2{
+    font-size:calc(2rem + 1.5vw)!important;
+    color:steelblue;
+    text-align: center;
+    text-shadow: black 1.5px 1.5px;
+    margin-top: 2rem;
+    margin-bottom:2rem;
+    font-weight: 900;
+}
+
+.fs-3{
+    font-size:calc(2rem + 1.5vw)!important;
+    text-align: center;
+    text-shadow: black 1px 1px;
+    margin:1rem;
+    font-weight: 900;
+}
+
+.fs-5{
+    text-align: center;
+    text-shadow: black .5px .5px;
+    margin-top: 2rem;
+    margin-bottom:2rem;
+    font-weight: 900;
+    color:steelblue;
+}
+
+a {
+    text-decoration: none !important;
+    color:steelblue;
+}
+
+.cards{
+    display:flex;
+    justify-content: center;
+    margin:1rem;
+}
+
+.logCard{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:1rem;
+}
+
+form{
+    margin-top:2rem;
+    background-color: var(--bs-body-bg);
 }

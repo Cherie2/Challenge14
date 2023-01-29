@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Post, Comment} = require("../../models");
+const {Comment} = require("../../models");
 
 
 //Create a new comment
@@ -35,21 +35,21 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// //Delete your comment
-// router.delete("/:id", (req, res) => {
+//Delete your comment
+router.delete("/:id", (req, res) => {
   
-//     Comment.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     }).then(delComment => {
-//       res.json(delComment);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json({ msg: "An Error Occurred!", err });
-//     });
-// });
+    Comment.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(delComment => {
+      res.json(delComment);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "An Error Occurred!", err });
+    });
+});
 
 
 module.exports = router;
