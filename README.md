@@ -10,7 +10,7 @@ In completing this project, I have learned the basic concepts of MySQL, Sequeliz
 
 ### Deployed Link
 
-- https://TechByte.herokuapp.com/
+- https://techbyte.herokuapp.com/
 
 ## Tools Utilized
 
