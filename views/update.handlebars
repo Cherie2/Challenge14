@@ -5,7 +5,7 @@
     <h1 class="fs-2 text-center">Update Post</h1>
     <div class="logCard">
     <div class="mb-3 text-center w-75">
-      <h4 for="title" class="form-label">Post Title</h4>
+      <h3 for="title" class="form-label">Post Title</h3>
       {{#with post}}
        <input type="hidden" id="post_id" value={{id}}/>
       <input
@@ -16,7 +16,7 @@
       />
     </div>
     <div class="mb-3 text-center w-75">
-      <h4 for="post_content" class="form-label">Post Content</h4>
+      <h3 for="post_content" class="form-label">Post Content</h3>
       <input
         type="text"
         id="post_content"
@@ -45,7 +45,7 @@
       {{#with comment}}
        <input type="hidden" id="comment_id" value={{id}}/>
     <div class="mb-3 text-center">
-      <h4 for="comment_text" class="form-label">Comment Content</h4>
+      <h3 for="comment_text" class="form-label">Comment Content</h3>
       <input
         type="text"
         id="comment_text"
