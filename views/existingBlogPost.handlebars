@@ -42,7 +42,7 @@
     <div class="card mb-3">
       {{#each singlePost.comments}}
       <p class="card-header text-center text-secondary">{{comment_text}}</p>
-      <h5 class="text-center">{{user.username}}  <span class="text-center text-secondary">{{format_date createdAt}}</span></h5>
+      <p class="text-muted"><span class="fs-5">{{user.username}}</span>  <span>{{format_date created_at}}</span></p>
       {{/each}}
      </div>
 </div>
