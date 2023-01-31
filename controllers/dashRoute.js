@@ -48,4 +48,24 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
+router.get("/comment/:id", async (req, res) => {
+  try {
+    const data = await Comment.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [Post, User],
+    });
+
+    const comment = data.get({ plain: true });
+    console.log(comment);
+    res.render("update", {
+      comment,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
