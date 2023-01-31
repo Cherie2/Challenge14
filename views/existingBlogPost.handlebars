@@ -41,8 +41,8 @@
   <h2 class="fs-2 text-center">Comments</h2>
     <div class="card mb-3">
       {{#each singlePost.comments}}
-      <h4 class="card-header text-center"><a href='/comment/{{id}}'>{{comment_text}}</h4>
-      <h5 class="text-center text-muted">Posted by: {{user.username}} on <span>{{format_date createdAt}}</span></h5>
+      <h4 class="card-header text-center">{{comment_text}}</h4>
+      <h5>{{user.username}}  <span class="text-center text-muted">{{format_date createdAt}}</span></h5>
       {{/each}}
      </div>
 </div>
