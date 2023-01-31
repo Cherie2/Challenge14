@@ -41,7 +41,7 @@
   <h2 class="fs-2 text-center">Comments</h2>
     <div class="card mb-3">
       {{#each singlePost.comments}}
-      <h4 class="card-header text-center">{{comment_text}}</h4>
+      <p class="card-header text-center text-secondary">{{comment_text}}</p>
       <h5 class="text-center">{{user.username}}  <span class="text-center text-muted">{{format_date createdAt}}</span></h5>
       {{/each}}
      </div>
